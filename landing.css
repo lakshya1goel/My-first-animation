@@ -1,0 +1,18 @@
+body {
+    background-image: url(./assets/background.jpg);
+    background-size: cover;
+}
+
+.moon-container img {
+    width: 25%;
+    position: absolute;
+    left: 35%;
+    bottom: 2%;;
+}
+
+.lander-container img {
+    width: 22%;
+    position: absolute;
+    left: 37%;
+    top: 0;
+}
