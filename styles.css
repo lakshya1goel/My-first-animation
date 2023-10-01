@@ -1,0 +1,19 @@
+body {
+    background-image: url(./assets/space.jpg);
+    background-size: cover;
+}
+
+.earth-container img{
+    width: 20%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.moon-container img {
+    width: 25%;
+    position: absolute;
+    right: 0;
+    top: 5;
+}
+  
