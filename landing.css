@@ -16,3 +16,20 @@ body {
     left: 37%;
     top: 0;
 }
+
+.flag-container img{
+    width: 15%;
+    position: absolute;
+    display: none;
+    
+}
+
+#first img{
+    left: 5%;
+    top: 5%;
+}
+
+#sec img{
+    right: 5%;
+    top: 5%;
+}

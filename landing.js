@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         var audio = new Audio('./assets/anthem.mp3'); 
         audio.play();
+        var images = document.getElementsByClassName('flag');
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = 'inline'; 
+        }
     }, 4000); 
 });
-
