@@ -11,8 +11,8 @@ body {
 .earth-container img{
     width: 20%;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 5%;
+    bottom: 2%;
 }
 
 .moon-container img {
@@ -26,8 +26,8 @@ body {
 .rocket-container img {
     width: 10%;
     position: absolute;
-    left: 15%;
-    bottom: 20%;
+    left: 17%;
+    bottom: 23%;
     rotate: 50deg;
 }
  
