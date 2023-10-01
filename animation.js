@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        var audio = new Audio('./assets/rocket-launch.wav');
+        var audio = new Audio('./assets/launch.wav');
         audio.play();
 
         setTimeout(function() {
