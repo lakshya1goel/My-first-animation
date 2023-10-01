@@ -1,20 +1,28 @@
-// const text = document.querySelector("#heading");
-// const strText = text.textContent;
-// text.textContent = "";
-// const string = strText.split("");
-// for (let i = 0; i < strText.length; i++) console.log(string[i]);
+document.addEventListener('DOMContentLoaded', function() {
 
-// let animateText = setInterval(textFunction, 400);
-// let char = 0;
-// function textFunction() {
-//   if (char == strText.length) {
-//     char = 0;
-//     text.textContent = "";
-//   } else {
-//     text.textContent += string[char];
-//     char = char + 1;
-//   }
-// }
+    function animateText(str) {
+        const text = document.getElementsByClassName("heading");
+        text[0].innerHTML = "";
+        let i = 0;
+        const begin = setInterval(() => {
+            if (i < str.length) {
+                text[0].innerHTML += str[i];
+                i++;
+            } else {
+                clearInterval(begin);
+                setTimeout(() => {
+                    animateText(str); 
+                }, 1000); 
+            }
+        }, 500);
+    }
+
+    const str = "CHANDRAYAAN 3.0";
+    animateText(str);
+
+});
+
+
 
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {

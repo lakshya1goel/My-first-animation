@@ -3,9 +3,9 @@ body {
     background-size: cover;
 }
 
-#heading {
-    display: block;
-    color: white
+.heading {
+    color: white;
+    text-align: center;
 }
 
 .earth-container img{
