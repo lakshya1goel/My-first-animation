@@ -39,6 +39,15 @@ document.addEventListener('keydown', function(event) {
                 rocket.style.bottom = startBottom + '%';
                 console.log(rocket.style.left, rocket.style.bottom);
 
+                setTimeout(function() {
+                    var link = document.createElement('a');
+                    link.href = './landing.html';
+                    link.target = '_blank';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }, 3000);
+
                 if (startLeft <= endRight && startBottom <= endTop && Math.abs(startLeft - endRight) < 0.1 && Math.abs(startBottom - endTop) < 0.1) {
                     clearInterval(animationInterval);
                 }
