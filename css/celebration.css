@@ -8,13 +8,15 @@ body {
     filter: brightness(2);
     position: absolute;
     bottom: 0;
+    left: 0;
+    rotate: 15deg;
     display: none;
 }
 
 #balloons-2 {
     width: 15%;
     position: absolute;
-    right: 0;
+    left: 90%;
     bottom: 0;
     rotate: -25deg;
     display: none;
