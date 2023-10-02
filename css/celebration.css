@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+#balloons-1 {
+    width: 15%;
+    filter: brightness(2);
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+#balloons-2 {
+    width: 15%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    rotate: -25deg;
+    display: none;
+}
+
+#balloons-3 {
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    display: none;
+}
+
+#cracker-1 {
+    width: 15%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#cracker-2 {
+    width: 15%;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    display: none;
+}
+
+#cracker-3 {
+    width: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
