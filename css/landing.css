@@ -1,0 +1,55 @@
+body {
+    background-image: url(./../assets/background.jpg);
+    background-size: cover;
+}
+
+#heading1 {
+    color: white;
+    position: absolute;
+    left: 30%;
+    font-size: 50px;
+    display: none;
+}
+
+#btn {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 45%;
+    top: 20%;
+    background: linear-gradient(to right, orange, green);
+    cursor: pointer;
+    display: none;
+}
+
+.moon-container img {
+    width: 25%;
+    position: absolute;
+    left: 35%;
+    bottom: 2%;;
+}
+
+.lander-container img {
+    width: 20%;
+    position: absolute;
+    left: 37%;
+    top: 0;
+}
+
+.flag-container img{
+    width: 15%;
+    position: absolute;
+    display: none;
+    
+}
+
+#first img{
+    left: 5%;
+    top: 5%;
+}
+
+#sec img{
+    right: 5%;
+    top: 5%;
+}
