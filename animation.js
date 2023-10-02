@@ -45,33 +45,29 @@ document.addEventListener('keydown', function(event) {
 
         setTimeout(function() {
             var rocket = document.querySelector('.rocket-container img');
-            var moon = document.querySelector('.moon-container img');
-            var animationDuration = 1500;
-            var startLeft = 15;  
-            var startBottom = 20; 
-            var endRight = 0;  
-            var endTop = 0;  
-            var stepLeft = (endRight - startLeft) / (animationDuration / 16);
-            var stepBottom = (endTop - startBottom) / (animationDuration / 16);
+            var animationDuration = 4500;
+            var startLeft = 17;  
+            var startBottom = 23; 
+            var endLeft = 100;
+            var endBottom = 100;
+            var stepLeft = (endLeft - startLeft) / (animationDuration / 16);
+            var stepBottom = (endBottom - startBottom) / (animationDuration / 16);
 
             function moveRocket() {
-                startLeft -= stepLeft;
-                startBottom -= stepBottom;
+                startLeft += stepLeft;
+                startBottom += stepBottom;
                 rocket.style.left = startLeft + '%';
                 rocket.style.bottom = startBottom + '%';
                 console.log(rocket.style.left, rocket.style.bottom);
 
-                setTimeout(function() {
+                if (startLeft >= endLeft && startBottom >= endBottom) {
+                    clearInterval(animationInterval);
                     var link = document.createElement('a');
                     link.href = './landing.html';
                     link.target = '_blank';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
-                }, 3000);
-
-                if (startLeft <= endRight && startBottom <= endTop && Math.abs(startLeft - endRight) < 0.1 && Math.abs(startBottom - endTop) < 0.1) {
-                    clearInterval(animationInterval);
                 }
             }
 
