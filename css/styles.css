@@ -1,5 +1,5 @@
 body {
-    background-image: url(./assets/background.jpg);
+    background-image: url('./../assets/background.jpg');
     background-size: cover;
 }
 
@@ -16,14 +16,6 @@ body {
     left: 5%;
     bottom: 2%;
 }
-
-.moon-container img {
-    width: 20%;
-    position: absolute;
-    left: 70%;
-    bottom: 60%;
-}
-
 
 .rocket-container img {
     width: 10%;
