@@ -1,5 +1,6 @@
 body {
-    background-color: black;
+    background: url('https://wallpapercave.com/wp/wp2991190.jpg');
+    background-size: cover;
     overflow: hidden;
 }
 
@@ -31,25 +32,25 @@ body {
 }
 
 #cracker-1 {
-    width: 15%;
+    width: 5%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20%;
     display: none;
 }
 
 #cracker-2 {
-    width: 15%;
+    width: 5%;
     position: absolute;
     top: 0;
-    left: 40%;
+    left: 70%;
     display: none;
 }
 
-#cracker-3 {
+/* #cracker-3 {
     width: 25%;
     position: absolute;
     top: 0;
     right: 0;
     display: none;
-}
+} */

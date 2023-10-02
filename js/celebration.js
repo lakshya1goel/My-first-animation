@@ -66,10 +66,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (event.key === 'ArrowDown') {
-            counter = (counter % 3) + 1;
+            counter = (counter % 2) +1;
             var id = 'cracker-' + counter;
             var images = document.getElementById(id);
             images.style.display = 'inline';
+            var audio = new Audio('./assets/cracker-audio.mp3');
+            audio.play();
+            var wid=5;
+            function increaseWidth() {
+                wid+=0.03;
+                images.style.width = wid + '%';
+
+                if (wid < 12) {
+                    requestAnimationFrame(increaseWidth);
+                }
+                else {
+                    images.style.display = 'none';
+                    audio.pause();
+                }
+            }
+            increaseWidth();
         }
     });
 });
