@@ -34,9 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         var audio = new Audio('./assets/anthem.mp3'); 
         audio.play();
+    }, 4000); 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
         var images = document.getElementsByClassName('flag');
         for (var i = 0; i < images.length; i++) {
             images[i].style.display = 'inline'; 
         }
-    }, 4000); 
+        var headings = document.getElementById('heading1');
+        headings.style.display = 'inline';
+        var but = document.getElementById('btn');
+        but.style.display = 'inline';
+    }, 5500); 
 });

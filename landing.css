@@ -3,6 +3,26 @@ body {
     background-size: cover;
 }
 
+#heading1 {
+    color: white;
+    position: absolute;
+    left: 30%;
+    font-size: 50px;
+    display: none;
+}
+
+#btn {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 45%;
+    top: 20%;
+    background: linear-gradient(to right, orange, green);
+    cursor: pointer;
+    display: none;
+}
+
 .moon-container img {
     width: 25%;
     position: absolute;
