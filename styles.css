@@ -6,7 +6,7 @@ body {
 .heading {
     color: white;
     margin-left: 20px;
-    /* text-align: center; */
+    display: inline;
     font-size: 50px;
 }
 
@@ -20,8 +20,8 @@ body {
 .moon-container img {
     width: 20%;
     position: absolute;
-    right: 0;
-    top: 0;
+    left: 70%;
+    bottom: 60%;
 }
 
 
