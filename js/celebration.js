@@ -1,90 +1,107 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var counter = 0;
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'ArrowLeft') {
-            var images = document.getElementById('balloons-1');
-            images.style.display='inline';
-            var animationDuration = 4000; 
-            var startBottom = 0;
-            var startLeft = 0;  
-            var endBottom = 100; 
-            var endLeft = 40;
-            var stepBottom = (endBottom - startBottom) / (animationDuration / 20);
-            var stepLeft = (endLeft - startLeft) / (animationDuration / 20);
-            function moveLander() {
-                startBottom += stepBottom;
-                startLeft += stepLeft;
-                images.style.bottom = startBottom + '%';
-                images.style.left = startLeft + '%';
-                if (startBottom >= endBottom && startLeft >= endLeft) {
-                    clearInterval(animationInterval);
-                    images.style.display='none';
-                }
-            }
-            var animationInterval = setInterval(moveLander, 20);
-        }
+        if (event.key === 'Enter') {
+            var balloons1 = document.getElementById('balloons-1');
+            var balloons2 = document.getElementById('balloons-2');
+            var balloons3 = document.getElementById('balloons-3');
+            var cracker1 = document.getElementById('cracker-1');
+            var cracker2 = document.getElementById('cracker-2');
+            var heading = document.getElementById('cele-id');
 
-        if (event.key === 'ArrowRight') {
-            var images = document.getElementById('balloons-2');
-            images.style.display='inline';
-            var animationDuration = 4000; 
-            var startBottom = 0;
-            var startLeft = 90;  
-            var endBottom = 100; 
-            var endLeft = 40;
-            var stepBottom = (endBottom - startBottom) / (animationDuration / 25);
-            var stepLeft = (endLeft - startLeft) / (animationDuration / 25);
-            function moveLander() {
-                startBottom += stepBottom;
-                startLeft += stepLeft;
-                images.style.bottom = startBottom + '%';
-                images.style.left = startLeft + '%';
-                if (startBottom >= endBottom && startLeft <= endLeft) {
-                    clearInterval(animationInterval);
-                    images.style.display='none';
-                }
-            }
-            var animationInterval = setInterval(moveLander, 20);
-        }
+            balloons1.style.display = 'inline';
+            balloons2.style.display = 'inline';
+            balloons3.style.display = 'inline';
+            cracker1.style.display = 'inline';
+            cracker2.style.display = 'inline';
+            heading.style.display = 'none';
 
-        if (event.key === 'ArrowUp') {
-            var images = document.getElementById('balloons-3');
-            images.style.display='inline';
-            var animationDuration = 4000; 
-            var startBottom = 0;
-            var endBottom = 100; 
-            var stepBottom = (endBottom - startBottom) / (animationDuration / 25);
-            function moveLander() {
-                startBottom += stepBottom;
-                images.style.bottom = startBottom + '%';
-                if (startBottom >= endBottom) {
-                    clearInterval(animationInterval);
-                    images.style.display='none';
-                }
-            }
-            var animationInterval = setInterval(moveLander, 20);
-        }
+            function balloon1() {
+                var animationDuration = 4000;
+                var startBottom = 0;
+                var startLeft = 0;
+                var endBottom = 100;
+                var endLeft = 40;
+                var stepBottom = (endBottom - startBottom) / (animationDuration / 20);
+                var stepLeft = (endLeft - startLeft) / (animationDuration / 20);
 
-        if (event.key === 'ArrowDown') {
-            counter = (counter % 2) +1;
-            var id = 'cracker-' + counter;
-            var images = document.getElementById(id);
-            images.style.display = 'inline';
-            var audio = new Audio('./assets/cracker-audio.mp3');
-            audio.play();
-            var wid=5;
+                function moveLander() {
+                    startBottom += stepBottom;
+                    startLeft += stepLeft;
+                    balloons1.style.bottom = startBottom + '%';
+                    balloons1.style.left = startLeft + '%';
+                    if (startBottom >= endBottom && startLeft >= endLeft) {
+                        clearInterval(animationInterval1);
+                        balloons1.style.display = 'none';
+                    }
+                }
+
+                var animationInterval1 = setInterval(moveLander, 20);
+            }
+
+            function balloon2() {
+                var animationDuration = 4000;
+                var startBottom = 0;
+                var startLeft = 90;
+                var endBottom = 100;
+                var endLeft = 40;
+                var stepBottom = (endBottom - startBottom) / (animationDuration / 25);
+                var stepLeft = (endLeft - startLeft) / (animationDuration / 25);
+
+                function moveLander() {
+                    startBottom += stepBottom;
+                    startLeft += stepLeft;
+                    balloons2.style.bottom = startBottom + '%';
+                    balloons2.style.left = startLeft + '%';
+                    if (startBottom >= endBottom && startLeft <= endLeft) {
+                        clearInterval(animationInterval2);
+                        balloons2.style.display = 'none';
+                    }
+                }
+
+                var animationInterval2 = setInterval(moveLander, 20);
+            }
+
+            function balloon3() {
+                var animationDuration = 4000;
+                var startBottom = 0;
+                var endBottom = 100;
+                var stepBottom = (endBottom - startBottom) / (animationDuration / 25);
+
+                function moveLander() {
+                    startBottom += stepBottom;
+                    balloons3.style.bottom = startBottom + '%';
+                    if (startBottom >= endBottom) {
+                        clearInterval(animationInterval3);
+                        balloons3.style.display = 'none';
+                    }
+                }
+
+                var animationInterval3 = setInterval(moveLander, 20);
+            }
+
             function increaseWidth() {
-                wid+=0.03;
-                images.style.width = wid + '%';
+                var wid = 5;
 
-                if (wid < 12) {
-                    requestAnimationFrame(increaseWidth);
+                function growWidth() {
+                    wid += 0.03;
+                    cracker1.style.width = wid + '%';
+                    cracker2.style.width = wid + '%';
+
+                    if (wid < 12) {
+                        requestAnimationFrame(growWidth);
+                    } else {
+                        cracker1.style.display = 'none';
+                        cracker2.style.display = 'none';
+                        audio.pause();
+                    }
                 }
-                else {
-                    images.style.display = 'none';
-                    audio.pause();
-                }
+
+                growWidth();
             }
+
+            balloon1();
+            balloon2();
+            balloon3();
             increaseWidth();
         }
     });
@@ -92,3 +109,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+
+    function animateText(str) {
+        const text = document.getElementsByClassName("cele");
+        text[0].innerHTML = "";
+        let i = 0;
+        const begin = setInterval(() => {
+            if (i < str.length) {
+                text[0].innerHTML += str[i];
+                i++;
+            } else {
+                clearInterval(begin);
+                setTimeout(() => {
+                    animateText(str); 
+                }, 1000); 
+            }
+        }, 100);
+    }
+
+    const str = "LET'S CELEBRATE!";
+    animateText(str);
+
+});

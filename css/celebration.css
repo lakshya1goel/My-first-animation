@@ -2,6 +2,15 @@ body {
     background: url('https://wallpapercave.com/wp/wp2991190.jpg');
     background-size: cover;
     overflow: hidden;
+    display: flex;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    left: 35%;
+    top: 40%;
 }
 
 #balloons-1 {
