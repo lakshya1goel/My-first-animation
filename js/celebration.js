@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var isAnimationInProgress = false;
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter'&& !isAnimationInProgress) {
+            isAnimationInProgress = true;
             var balloons1 = document.getElementById('balloons-1');
             var balloons2 = document.getElementById('balloons-2');
             var balloons3 = document.getElementById('balloons-3');
@@ -80,9 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             function increaseWidth() {
+                var audio = new Audio('./assets/cracker-audio.mp3');
                 var wid = 5;
 
                 function growWidth() {
+                    audio.play();
                     wid += 0.03;
                     cracker1.style.width = wid + '%';
                     cracker2.style.width = wid + '%';
@@ -92,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         cracker1.style.display = 'none';
                         cracker2.style.display = 'none';
-                        audio.pause();
+                        isAnimationInProgress = false;
+                        // audio.pause();
                     }
                 }
 
